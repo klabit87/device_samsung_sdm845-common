@@ -46,6 +46,8 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
+PRODUCT_COPY_FILES += \
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
 
 # Input
 PRODUCT_COPY_FILES += \

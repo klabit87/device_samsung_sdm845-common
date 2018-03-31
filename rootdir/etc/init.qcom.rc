@@ -1,6 +1,9 @@
 import /init.wifi.rc
 
 on init
+    # Override vendor usb_audio_policy_configuration
+    mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
+
     # reset_reason
     chown system system /proc/reset_reason
     chmod 0600 /proc/reset_reason
