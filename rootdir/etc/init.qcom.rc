@@ -29,3 +29,5 @@ on init
     mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind
     mount none /system/lib/hw/power.qcom.so /vendor/lib/hw/power.qcom.so bind
 
+    # Override vendor usb_audio_policy_configuration
+    mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
