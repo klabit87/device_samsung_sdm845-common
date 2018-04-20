@@ -118,5 +118,8 @@ TARGET_RECOVERY_DEVICE_MODULES := libinit_star
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
+
 # Inherit from the proprietary version
 -include vendor/samsung/sdm845-common/BoardConfigVendor.mk
