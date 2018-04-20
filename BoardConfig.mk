@@ -107,6 +107,10 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 endif
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_star
+TARGET_RECOVERY_DEVICE_MODULES := libinit_star
+
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
