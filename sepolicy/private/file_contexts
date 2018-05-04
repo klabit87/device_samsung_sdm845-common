@@ -4,6 +4,9 @@
 /firmware(/.*)?          u:object_r:firmware_file:s0
 /persist(/.*)?           u:object_r:persist_file:s0
 
+# Audio
+/system/bin/audioloader u:object_r:audioloader_exec:s0
+
 # Lights
 /system/bin/hw/android\.hardware\.light@2\.0-service\.samsung_sdm845    u:object_r:hal_light_sdm845_exec:s0
 
