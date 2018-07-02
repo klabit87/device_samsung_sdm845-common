@@ -57,6 +57,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/compatibility_matrix.xml:system/compatibility_matrix.xml
 
+# Lights
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.samsung_sdm845
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
