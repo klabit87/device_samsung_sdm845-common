@@ -37,6 +37,10 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # Display
 PRODUCT_PACKAGES += \
     libvulkan
