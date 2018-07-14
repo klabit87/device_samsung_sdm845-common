@@ -50,6 +50,7 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Init
 PRODUCT_PACKAGES += \
+    init.qcom.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc
@@ -85,3 +86,7 @@ PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
     com.android.nfc_extras
+
+# Power
+PRODUCT_PACKAGES += \
+    power.qcom
