@@ -46,6 +46,9 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/compatibility_matrix.xml:system/compatibility_matrix.xml
+
 # Net
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
