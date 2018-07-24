@@ -52,7 +52,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/sdm845
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 # Platform
-TARGET_BOARD_PLATFORM := sdm845
+# TARGET_BOARD_PLATFORM := sdm845
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno630
 
 # Properties
