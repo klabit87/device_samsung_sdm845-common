@@ -41,6 +41,10 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     audio.a2dp.default
 
+# Input
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayout/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl
+
 # Camera
 PRODUCT_PACKAGES += \
     Snap
