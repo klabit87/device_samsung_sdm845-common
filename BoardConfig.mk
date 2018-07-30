@@ -93,7 +93,7 @@ TARGET_EXFAT_DRIVER := sdfat
 
 # Recovery (TWRP)
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/recovery/etc/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 ifeq ($(RECOVERY_VARIANT),twrp)
 RECOVERY_SDCARD_ON_DATA := true
