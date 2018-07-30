@@ -111,6 +111,9 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_FBE := true
 endif
 
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := bt_firmware firmware odm persist
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_star
 TARGET_RECOVERY_DEVICE_MODULES := libinit_star
