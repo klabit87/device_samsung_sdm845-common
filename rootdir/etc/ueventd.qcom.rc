@@ -1,0 +1,18 @@
+# Mobicore
+/dev/mobicore             0600   system     system
+/dev/mobicore-user        0666   system     system
+
+# From ueventd.rc
+/dev/ovr*                 0664   root       system
+/dev/uhid                 0660   system     bluetooth
+/dev/power_on_alarm       0660   system     radio
+
+# Anyone can read the logs, but if they're not in the "logs"
+# group, then they'll only see log entries for their UID.
+/dev/log/*                0666   root       log
+
+# Reactivation Lock
+/dev/block/platform/soc/1d84000.ufshc/by-name/steady    0660    system    system
+
+# Google FRP solution
+/dev/block/platform/soc/1d84000.ufshc/by-name/persistent    0660    system    system

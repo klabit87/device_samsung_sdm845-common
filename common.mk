@@ -37,6 +37,12 @@ DEVICE_PACKAGE_OVERLAYS += \
 TARGET_SCREEN_HEIGHT := 2960
 TARGET_SCREEN_WIDTH := 1440
 
+# Init
+PRODUCT_PACKAGES += \
+    init.qcom.rc \
+    init.wifi.rc \
+    ueventd.qcom.rc
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default
