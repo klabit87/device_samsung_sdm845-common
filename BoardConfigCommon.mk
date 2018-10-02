@@ -132,5 +132,8 @@ BOARD_ROOT_EXTRA_FOLDERS := \
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)/releasetools
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += $(COMMON_PATH)
+
 # Inherit from the proprietary version
 -include vendor/samsung/sdm845-common/BoardConfigVendor.mk
