@@ -64,7 +64,6 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
 # Treble
 BOARD_VNDK_VERSION := current
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Dex
 ifeq ($(HOST_OS),linux)
