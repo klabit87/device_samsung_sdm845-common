@@ -31,3 +31,11 @@ on init
 
     # Override vendor usb_audio_policy_configuration
     mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
+
+on fs 
+
+# Loggy
+service loggy /system/bin/sh /loggy.sh
+    class main
+    user root
+    oneshot

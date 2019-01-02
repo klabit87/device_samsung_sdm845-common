@@ -50,7 +50,8 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Init
 PRODUCT_PACKAGES += \
-    init.qcom.rc
+    init.qcom.rc \
+    loggy.sh
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc
