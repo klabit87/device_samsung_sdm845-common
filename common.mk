@@ -50,6 +50,9 @@ TARGET_SCREEN_WIDTH := 1440
 PRODUCT_PACKAGES += \
     ueventd.rc
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc
+
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_PACKAGES += \
