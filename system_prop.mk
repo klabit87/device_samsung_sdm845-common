@@ -14,37 +14,15 @@
 # limitations under the License.
 #
 
-# Netmgr
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.ul_mode=5 \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.mode=concurrent \
-    persist.data.netmgrd.qos.enable=false \
-    persist.data.wda.enable=true \
-    persist.rmnet.data.enable=true 
-
 # CNE 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.cne.feature=1 
+    persist.vendor.cne.feature=0
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.enable_hwc_vds=1 \
-    debug.sf.latch_unsignaled=1 \
-    persist.debug.wfd.enable=1 \
-    persist.demo.hdmirotationlock=false \
-    sdm.debug.disable_dest_scalar=1 \
-    sdm.debug.disable_inline_rotator=1 \
-    sdm.debug.prefersplit=1
-
-# IOP
-PRODUCT_PROPERTY_OVERRIDES += \
-    iop.enable_prefetch_ofr=1 
+    debug.sf.hw=0 \
+    debug.egl.hw=0 \
+    debug.sf.latch_unsignaled=1  
 
 # CPU
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -53,8 +31,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    DEVICE_PROVISIONED=1 \
-    persist.radio.atfwd.start=false \
+    persist.radio.atfwd.start=true \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
