@@ -39,9 +39,6 @@ write_headers "enchilada"
 # The standard common blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt true
 
-# VNDK compat layer
-write_makefiles "$MY_DIR"/proprietary-files-vndk.txt true
-
 # We are done!
 write_footers
 
