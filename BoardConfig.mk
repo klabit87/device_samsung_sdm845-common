@@ -114,6 +114,11 @@ endif
 
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware firmware odm persist
+BOARD_ROOT_EXTRA_FOLDERS := \
+    /mnt/vendor/persist:/persist \
+    /vendor/bt_firmware:/bt_firmware \
+    /vendor/dsp:/dsp \
+    /vendor/firmware_mnt:/firmware
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_star
