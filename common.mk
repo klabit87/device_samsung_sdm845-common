@@ -48,9 +48,7 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Init
 PRODUCT_PACKAGES += \
-    init.qcom.rc \
-    init.wifi.rc \
-    ueventd.qcom.rc
+    ueventd.rc
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
