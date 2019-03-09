@@ -50,7 +50,7 @@ TARGET_SCREEN_WIDTH := 1440
 
 # Init
 PRODUCT_PACKAGES += \
-    ueventd.rc
+    ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc

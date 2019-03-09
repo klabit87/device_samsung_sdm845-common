@@ -9,6 +9,7 @@
 /dev/block/bootdevice/by-name/system                    /system                   ext4    ro,errors=panic                                      wait
 /dev/block/bootdevice/by-name/userdata                  /data               ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic       wait,check,encryptable=footer,quota
 /dev/block/bootdevice/by-name/vendor                    /vendor             ext4    ro,barrier=1                                          wait
+#/dev/block/bootdevice/by-name/cache                     /cache              ext4    noatime,nosuid,nodev,noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic       wait,check
 #
 # Need to have this entry in here even though the mount point itself is no longer needed.
 # The update_engine code looks for this entry in order to determine the boot device address
