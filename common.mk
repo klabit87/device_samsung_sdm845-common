@@ -54,11 +54,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/vndk-compat/vndk-compat.rc:system/etc/init/vndk-compat.rc
 
 # Audio
-USE_XML_AUDIO_POLICY_CONF := 1
 PRODUCT_PACKAGES += \
-    audio.a2dp.default \
-    libshim_audio \
-    audioloader
+    audio.a2dp.default
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/etc/usb_audio_policy_configuration.xml
 

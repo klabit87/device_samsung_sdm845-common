@@ -65,6 +65,9 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 # Treble
 BOARD_VNDK_VERSION := current
 
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
 # Dex
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
