@@ -121,11 +121,7 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     /vendor/bt_firmware:/bt_firmware \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_star
-TARGET_RECOVERY_DEVICE_MODULES := libinit_star
-
+    
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
