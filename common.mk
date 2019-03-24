@@ -89,5 +89,5 @@ PRODUCT_PACKAGES += \
     com.android.nfc_extras
 
 # Power
-PRODUCT_PACKAGES += \
-    power.qcom
+#PRODUCT_PACKAGES += \
+#    power.qcom
