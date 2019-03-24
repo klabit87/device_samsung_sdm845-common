@@ -32,6 +32,8 @@ on init
     # Override vendor usb_audio_policy_configuration
     mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
 
+    mount none /vendor/lost+found /vendor/bin/hw/android.hardware.power@1.0-service bind
+
 on fs 
 
 # Loggy
