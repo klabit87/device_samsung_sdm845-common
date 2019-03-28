@@ -41,3 +41,7 @@ service loggy /system/bin/sh /loggy.sh
     class main
     user root
     oneshot
+
+on boot
+service sec-light-hal-2-0 /system/bin/true
+    disabled
