@@ -88,3 +88,7 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     power.qcom
+
+# Remove AudioFX
+PRODUCT_PACKAGES += \
+    RemovePackages
