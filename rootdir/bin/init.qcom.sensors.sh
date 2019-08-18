@@ -1,4 +1,5 @@
-# Copyright (c) 2009-2012, 2014-2018, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2015, The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -24,30 +25,21 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-on early-init
-    # create symlink for vendor mount points
-    symlink /vendor/firmware_mnt /firmware
-    symlink /vnedor/bt_firmware /bt_firmware
-    symlink /vendor/dsp /dsp
 
+#
+# Function to start sensors for SSC enabled platforms
+#
+start_sensors()
+{
+    if [ -c /dev/msm_dsps -o -c /dev/sensors ]; then
+        chmod -h 775 /persist/sensors
+        chmod -h 664 /persist/sensors/sensors_settings
+        mkdir -p /persist/sensors/registry/registry
+        chown -h -R system.system /persist/sensors
+        start vendor.sensors.qti  
+        start vendor.sensors
+        start factory_ssc
+    fi
+}
 
-on init
-    #mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind
-    #mount none /system/lib/hw/power.qcom.so /vendor/lib/hw/power.qcom.so bind
-
-    # Override vendor usb_audio_policy_configuration
-    mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
-
-    mount none /vendor/lost+found /vendor/bin/hw/android.hardware.power@1.0-service bind
-
-on fs 
-
-# Loggy
-service loggy /system/bin/sh /loggy.sh
-    class main
-    user root
-    oneshot
-
-on boot
-service sec-light-hal-2-0 /system/bin/true
-    disabled
+start_sensors

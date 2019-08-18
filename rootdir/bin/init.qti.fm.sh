@@ -1,4 +1,5 @@
-# Copyright (c) 2009-2012, 2014-2018, The Linux Foundation. All rights reserved.
+#!/vendor/bin/sh
+# Copyright (c) 2009-2011, 2015, 2017 The Linux Foundation. All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
 # modification, are permitted provided that the following conditions are met:
@@ -24,30 +25,66 @@
 # OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
-on early-init
-    # create symlink for vendor mount points
-    symlink /vendor/firmware_mnt /firmware
-    symlink /vnedor/bt_firmware /bt_firmware
-    symlink /vendor/dsp /dsp
 
+setprop vendor.hw.fm.init 0
 
-on init
-    #mount none /system/lib64/hw/power.qcom.so /vendor/lib64/hw/power.qcom.so bind
-    #mount none /system/lib/hw/power.qcom.so /vendor/lib/hw/power.qcom.so bind
+mode=`getprop vendor.hw.fm.mode`
+version=199217
 
-    # Override vendor usb_audio_policy_configuration
-    mount none /system/etc/usb_audio_policy_configuration.xml /vendor/etc/usb_audio_policy_configuration.xml bind
+LOG_TAG="qti-fm"
+LOG_NAME="${0}:"
 
-    mount none /vendor/lost+found /vendor/bin/hw/android.hardware.power@1.0-service bind
+loge ()
+{
+  /vendor/bin/log -t $LOG_TAG -p e "$LOG_NAME $@"
+}
 
-on fs 
+logi ()
+{
+  /vendor/bin/log -t $LOG_TAG -p i "$LOG_NAME $@"
+}
 
-# Loggy
-service loggy /system/bin/sh /loggy.sh
-    class main
-    user root
-    oneshot
+failed ()
+{
+  loge "$1: exit code $2"
+  exit $2
+}
 
-on boot
-service sec-light-hal-2-0 /system/bin/true
-    disabled
+logi "In FM shell Script"
+logi "mode: $mode"
+logi "Version : $version"
+
+#$fm_qsoc_patches <fm_chipVersion> <enable/disable WCM>
+#
+case $mode in
+  "normal")
+        logi "inserting the radio transport module"
+        echo 1 > /sys/module/radio_iris_transport/parameters/fmsmd_set
+        /vendor/bin/fm_qsoc_patches $version 0
+     ;;
+  "wa_enable")
+   /vendor/bin/fm_qsoc_patches $version 1
+     ;;
+  "wa_disable")
+   /vendor/bin/fm_qsoc_patches $version 2
+     ;;
+   *)
+    logi "Shell: Default case"
+    /vendor/bin/fm_qsoc_patches $version 0
+    ;;
+esac
+
+exit_code_fm_qsoc_patches=$?
+
+case $exit_code_fm_qsoc_patches in
+   0)
+    logi "FM QSoC calibration and firmware download succeeded"
+   ;;
+  *)
+    failed "FM QSoC firmware download and/or calibration failed" $exit_code_fm_qsoc_patches
+   ;;
+esac
+
+setprop vendor.hw.fm.init 1
+
+exit 0
