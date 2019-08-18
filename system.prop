@@ -1,2 +1,5 @@
 # Disable ConsumerIR
 config.disable_consumerir=true
+
+# SF
+debug.sf.latch_unsignaled=1
