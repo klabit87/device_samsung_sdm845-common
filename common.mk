@@ -94,5 +94,10 @@ PRODUCT_PACKAGES += \
     RemovePackages
 
 # qti interfaces
+PRODUCT_PACKAGES += \
+    QtiAudio \
+    vendor.qti.hardware.radio.am-V1.0-java \
+	vendor.qti.qcril.am-V1.0-java
+
 PRODUCT_COPY_FILES += \
 	device/samsung/sdm845-common/interfaces.xml:system/etc/permissions/interfaces.xml
