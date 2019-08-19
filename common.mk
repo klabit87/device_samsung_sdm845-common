@@ -92,3 +92,7 @@ PRODUCT_PACKAGES += \
 # Remove AudioFX
 PRODUCT_PACKAGES += \
     RemovePackages
+
+# qti interfaces
+PRODUCT_COPY_FILES += \
+	device/samsung/sdm845-common/interfaces.xml:system/etc/permissions/interfaces.xml
