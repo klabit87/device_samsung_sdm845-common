@@ -89,6 +89,10 @@ public interface IQcRilAudio extends android.hidl.base.V1_0.IBase {
             return "[class or subclass of " + IQcRilAudio.kInterfaceName + "]@Proxy";
         }
 
+        public static final int FIRST_CALL_TRANSACTION = 1;
+
+        public static final int FLAG_ONEWAY = 1;
+
         // Methods from ::vendor::qti::hardware::radio::am::V1_0::IQcRilAudio follow.
         @Override
         public void setCallback(IQcRilAudioCallback iQcRilAudioCallback)

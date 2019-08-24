@@ -210,6 +210,10 @@ public interface IQcRilAudioCallback extends android.hidl.base.V1_0.IBase {
             }
         }
 
+        public static final int FIRST_CALL_TRANSACTION = 1;
+
+        public static final int FLAG_ONEWAY = 1;
+
         @Override
         public void setHALInstrumentation()
                 throws android.os.RemoteException {
