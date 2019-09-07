@@ -98,6 +98,9 @@ TARGET_USERIMAGES_USE_F2FS := true
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := sdfat
 
+# HIDL
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
+
 # Recovery (TWRP)
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
@@ -125,8 +128,13 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     /vendor/bt_firmware:/bt_firmware \
     /vendor/dsp:/dsp \
     /vendor/firmware_mnt:/firmware
+
+# Telephony
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
     
 # Sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += device/qcom/sepolicy/private
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += device/qcom/sepolicy/public
 #BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(COMMON_PATH)/sepolicy/private
 
 # Releasetools

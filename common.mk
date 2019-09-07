@@ -42,7 +42,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.heartrate.xml:system/etc/permissions/android.hardware.sensor.heartrate.xml \
     frameworks/native/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml \
     frameworks/native/data/etc/android.hardware.vr.high_performance.xml:system/etc/permissions/android.hardware.vr.high_performance.xml \
-    frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml
+    frameworks/native/data/etc/android.software.freeform_window_management.xml:system/etc/permissions/android.software.freeform_window_management.xml \
+    $(LOCAL_PATH)/permissions/imsmanager_library.xml:system/etc/permissions/imsmanager_library.xml \
+    $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2960
@@ -51,7 +53,9 @@ TARGET_SCREEN_WIDTH := 1440
 # Init
 PRODUCT_PACKAGES += \
     init.qcom.rc \
-    loggy.sh
+    init.rilchip.rc \
+    init.rilcommon.rc \
+    init.rilepdg.rc
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -83,7 +87,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     NfcNci \
     Tag \
-    com.android.nfc_extras
+    com.android.nfc_extras \
+    android.hardware.nfc@1.0:64 \
+    android.hardware.nfc@1.1:64 \
+    android.hardware.secure_element@1.0:64 \
+    vendor.nxp.nxpese@1.0:64 \
+    vendor.nxp.nxpnfc@1.0:64
 
 # Power
 PRODUCT_PACKAGES += \
@@ -98,6 +107,13 @@ PRODUCT_PACKAGES += \
     QtiAudio \
     vendor.qti.hardware.radio.am-V1.0-java \
 	vendor.qti.qcril.am-V1.0-java
+
+# Telephony
+PRODUCT_PACKAGES += \
+    telephony-ext
+
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 PRODUCT_COPY_FILES += \
 	device/samsung/sdm845-common/interfaces.xml:system/etc/permissions/interfaces.xml
